@@ -63,7 +63,7 @@ h2 em{font-style:normal;color:var(--pink-deep)}
 @keyframes g-glow{from{opacity:.5}to{opacity:1}}
 .g-logo{width:min(92px,20vw);margin-bottom:.9rem;opacity:0;animation:g-fade 1.6s ease .3s forwards;position:relative;z-index:5}
 .g-kicker{font-size:12px;letter-spacing:7px;color:#B9D2DD;opacity:0;animation:g-fade 1.4s ease 1s forwards;position:relative;z-index:5}
-.g-title{font-family:var(--serif);font-size:clamp(17px,2.6vw,24px);color:#F4ECEF;margin-top:10px;text-align:center;line-height:1.9;opacity:0;animation:g-fade 1.5s ease 1.5s forwards;position:relative;z-index:5}
+.g-title{font-family:var(--serif);font-size:clamp(17px,2.6vw,24px);color:#F4ECEF;margin-top:16px;text-align:center;line-height:2.5;opacity:0;animation:g-fade 1.5s ease 1.5s forwards;position:relative;z-index:5}
 @keyframes g-fade{to{opacity:1}}
 
 /* 五朵花圃 */
@@ -733,7 +733,7 @@ const field=$('#g-field');
 const MB = innerWidth<640;           /* 手機:花整體縮小,2-2-1 排進一屏 */
 FLOWERS.forEach((f,i)=>{
   const s=f.s*(MB?0.78:1);
-  const imgW=(MB?92:104)*s;          /* 顯示寬度依每朵縮放,底部對齊自然錯落 */
+  const imgW=(MB?74:82)*s;           /* 顯示寬度依每朵縮放,底部對齊自然錯落(整體再縮小、變矮) */
   const btn=document.createElement('button');
   btn.className='g-flower'; btn.dataset.target=f.target;
   btn.setAttribute('aria-label',f.label);
