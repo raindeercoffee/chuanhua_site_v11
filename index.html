@@ -61,15 +61,13 @@ h2 em{font-style:normal;color:var(--pink-deep)}
   background:linear-gradient(180deg,#2B4459 0%,#3D6B88 28%,rgba(95,151,180,.4) 45%,rgba(143,192,214,0) 62%),url('assets/watercolor.png') center/cover}
 #garden::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 62% 40% at 50% 22%,rgba(87,182,217,.22),transparent 70%);animation:g-glow 8s ease-in-out infinite alternate;pointer-events:none}
 @keyframes g-glow{from{opacity:.5}to{opacity:1}}
-/* v10 暫用:位置微調(--pos-* 預設 0,面板拖完會由我固化並整段移除) */
-:root{--pos-logo:0px;--pos-kicker:0px;--pos-title:0px;--pos-field:0px;--pos-hint:0px}
-.g-logo{width:min(92px,20vw);margin-bottom:.9rem;opacity:0;animation:g-fade 1.6s ease .3s forwards;position:relative;z-index:5;transform:translateY(var(--pos-logo))}
-.g-kicker{font-size:12px;letter-spacing:7px;color:#B9D2DD;opacity:0;animation:g-fade 1.4s ease 1s forwards;position:relative;z-index:5;transform:translateY(var(--pos-kicker))}
-.g-title{font-family:var(--serif);font-size:clamp(17px,2.6vw,24px);color:#F4ECEF;margin-top:16px;text-align:center;line-height:2.5;opacity:0;animation:g-fade 1.5s ease 1.5s forwards;position:relative;z-index:5;transform:translateY(var(--pos-title))}
+.g-logo{width:min(92px,20vw);margin-bottom:.9rem;opacity:0;animation:g-fade 1.6s ease .3s forwards;position:relative;z-index:5;transform:translateY(-24px)}
+.g-kicker{font-size:12px;letter-spacing:7px;color:#B9D2DD;opacity:0;animation:g-fade 1.4s ease 1s forwards;position:relative;z-index:5;transform:translateY(-14px)}
+.g-title{font-family:var(--serif);font-size:clamp(17px,2.6vw,24px);color:#F4ECEF;margin-top:16px;text-align:center;line-height:2.5;opacity:0;animation:g-fade 1.5s ease 1.5s forwards;position:relative;z-index:5;transform:translateY(16px)}
 @keyframes g-fade{to{opacity:1}}
 
 /* 五朵花圃 */
-#g-field{position:relative;z-index:6;display:flex;gap:clamp(6px,3.4vw,52px);align-items:flex-end;justify-content:center;margin-top:1.8rem;transform:translateY(var(--pos-field))}
+#g-field{position:relative;z-index:6;display:flex;gap:clamp(6px,3.4vw,52px);align-items:flex-end;justify-content:center;margin-top:1.8rem;transform:translateY(30px)}
 .g-flower{position:relative;background:none;border:none;padding:0 4px;cursor:pointer;-webkit-tap-highlight-color:transparent}
 /* 五朵花改用可替換的圖檔(assets/flower_1~5),之後手繪同檔名覆蓋即可 */
 /* g-imgwrap 負責搖曳(rotate)、g-img 負責浮現(opacity+translate/scale),分兩層避免搶同一個 transform 導致花消失 */
@@ -95,7 +93,7 @@ h2 em{font-style:normal;color:var(--pink-deep)}
 }
 #g-skip{position:absolute;top:1.8rem;right:2.2rem;z-index:7;background:none;border:none;border-bottom:1px solid currentColor;color:rgba(255,255,255,.6);font-family:var(--sans);font-weight:300;font-size:12px;letter-spacing:3px;padding-bottom:3px;cursor:pointer;opacity:0;animation:g-fade 1.2s ease 3s forwards;transition:color .3s}
 #g-skip:hover{color:#fff}
-.g-hint{position:relative;z-index:7;margin-top:26px;font-size:11px;letter-spacing:4px;color:#31506A;opacity:0;animation:g-fade 1.4s ease 4.2s forwards;text-shadow:0 1px 6px rgba(255,255,255,.7);transform:translateY(var(--pos-hint))}
+.g-hint{position:relative;z-index:7;margin-top:26px;font-size:11px;letter-spacing:4px;color:#31506A;opacity:0;animation:g-fade 1.4s ease 4.2s forwards;text-shadow:0 1px 6px rgba(255,255,255,.7);transform:translateY(48px)}
 /* 花園波光 */
 .g-waves{position:absolute;bottom:-2px;left:0;width:100%;z-index:2;pointer-events:none}
 .g-wave{position:absolute;bottom:0;left:0;width:200%;height:90px;background-repeat:repeat-x;background-size:50% 100%;opacity:.5}
@@ -1007,95 +1005,5 @@ if(!reduced){
 })();
 </script>
 
-<!-- ═════════ 暫用:花園位置微調面板(調完由我固化進 CSS 並整段移除,不會保留給訪客) ═════════ -->
-<style>
-#pp-panel{position:fixed;top:16px;left:16px;z-index:99999;width:280px;
-  background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border:1px solid #cdd9e3;border-radius:16px;
-  box-shadow:0 18px 50px rgba(30,60,80,.25);font-family:"Noto Sans TC",system-ui,sans-serif;color:#2b3a44}
-#pp-panel .pp-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 10px;font-weight:700;font-size:15px;color:#2F4E63}
-#pp-panel .pp-x{background:none;border:none;font-size:20px;line-height:1;color:#7a8fa0;cursor:pointer;padding:0 4px}
-#pp-panel .pp-tip{padding:0 16px 10px;font-size:11.5px;color:#7a8fa0;line-height:1.6}
-#pp-panel .pp-row{padding:8px 16px}
-#pp-panel .pp-row:nth-child(odd){background:rgba(234,242,248,.5)}
-#pp-panel .pp-row-top{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
-#pp-panel .pp-val{color:#7a8fa0;font-family:ui-monospace,monospace;font-size:12px}
-#pp-panel input[type=range]{width:100%}
-#pp-panel .pp-foot{display:flex;gap:8px;padding:12px 16px}
-#pp-panel .pp-foot button{flex:1;border:none;border-radius:8px;padding:9px 0;font-size:12.5px;font-family:inherit;cursor:pointer}
-#pp-panel #pp-export{background:#2F4E63;color:#fff}
-#pp-panel #pp-reset{background:#eef3f7;color:#5a7280}
-#pp-panel #pp-out{display:none;width:calc(100% - 32px);margin:0 16px 14px;height:110px;font-family:ui-monospace,monospace;font-size:11px;border:1px solid #cdd9e3;border-radius:8px;padding:8px;resize:vertical;color:#2b3a44;background:#f8fbfd}
-</style>
-<script>
-(function(){
-  const ITEMS=[
-    {k:'logo',   label:'LOGO 川花字樣'},
-    {k:'kicker', label:'副標「從河川長出花」'},
-    {k:'title',  label:'標語兩行字'},
-    {k:'field',  label:'五朵花花圃(整組)'},
-    {k:'hint',   label:'底部提示文字'},
-  ];
-  const LS='chuanhua_v10_positions';
-  const rootStyle=document.documentElement.style;
-
-  function curPx(k){
-    const v=getComputedStyle(document.documentElement).getPropertyValue('--pos-'+k).trim();
-    return parseInt(v)||0;
-  }
-  function readSaved(){ try{return JSON.parse(localStorage.getItem(LS)||'{}')}catch(e){return {}} }
-  function save(){
-    const data={};
-    ITEMS.forEach(it=>{ data[it.k]=curPx(it.k) });
-    localStorage.setItem(LS, JSON.stringify(data));
-  }
-  const saved=readSaved();
-  ITEMS.forEach(it=>{ if(saved[it.k]!==undefined) rootStyle.setProperty('--pos-'+it.k, saved[it.k]+'px'); });
-
-  let built=false;
-  function buildPanel(){
-    if(built){ const p=document.getElementById('pp-panel'); p.style.display = p.style.display==='none'?'block':'none'; return; }
-    built=true;
-    const p=document.createElement('div'); p.id='pp-panel';
-    p.innerHTML='<div class="pp-head"><span>↕️ 位置微調(暫用)</span><button class="pp-x" title="關閉">×</button></div>'
-      +'<div class="pp-tip">拖動滑桿把該區塊往下移(可拖回負值往上移)。調好之後把「匯出數值」貼給我,我會固化進網站、再拿掉這個面板。</div>';
-    ITEMS.forEach(it=>{
-      const row=document.createElement('div'); row.className='pp-row';
-      const val=curPx(it.k);
-      row.innerHTML='<div class="pp-row-top"><span>'+it.label+'</span><span class="pp-val" data-out="'+it.k+'">'+val+'px</span></div>'
-        +'<input type="range" min="-60" max="220" step="2" value="'+val+'" data-k="'+it.k+'">';
-      p.appendChild(row);
-    });
-    const foot=document.createElement('div'); foot.className='pp-foot';
-    foot.innerHTML='<button id="pp-export">匯出數值</button><button id="pp-reset">重設全部</button>';
-    p.appendChild(foot);
-    const out=document.createElement('textarea'); out.id='pp-out'; out.readOnly=true; p.appendChild(out);
-    document.body.appendChild(p);
-
-    p.querySelectorAll('input[type=range]').forEach(inp=>{
-      inp.addEventListener('input',()=>{
-        rootStyle.setProperty('--pos-'+inp.dataset.k, inp.value+'px');
-        p.querySelector('[data-out="'+inp.dataset.k+'"]').textContent=inp.value+'px';
-        save();
-      });
-    });
-    p.querySelector('.pp-x').addEventListener('click',()=>{ p.style.display='none'; });
-    p.querySelector('#pp-reset').addEventListener('click',()=>{
-      if(confirm('確定要清除所有調過的位置、回到預設嗎?')){ localStorage.removeItem(LS); location.reload(); }
-    });
-    p.querySelector('#pp-export').addEventListener('click',()=>{
-      let txt='花園位置微調(px,往下為正):\n';
-      ITEMS.forEach(it=>{ txt+='  '+it.label+': '+curPx(it.k)+'px\n'; });
-      out.style.display='block'; out.value=txt; out.select();
-      try{ navigator.clipboard.writeText(txt); }catch(e){}
-    });
-  }
-
-  // 跟色彩面板同一個進入方式:網址加 ?edit,或按 Ctrl+Shift+E
-  if(/[?&]edit\b/.test(location.search)) buildPanel();
-  addEventListener('keydown',e=>{
-    if(e.ctrlKey&&e.shiftKey&&(e.key==='E'||e.key==='e')){ e.preventDefault(); buildPanel(); }
-  });
-})();
-</script>
 </body>
 </html>
