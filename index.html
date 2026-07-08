@@ -62,8 +62,8 @@ h2 em{font-style:normal;color:var(--pink-deep)}
 #garden::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 62% 40% at 50% 22%,rgba(87,182,217,.22),transparent 70%);animation:g-glow 8s ease-in-out infinite alternate;pointer-events:none}
 @keyframes g-glow{from{opacity:.5}to{opacity:1}}
 .g-logo{width:min(92px,20vw);margin-bottom:.9rem;opacity:0;animation:g-fade 1.6s ease .3s forwards;position:relative;z-index:5;transform:translateY(-24px)}
-.g-kicker{font-size:12px;letter-spacing:7px;color:#B9D2DD;opacity:0;animation:g-fade 1.4s ease 1s forwards;position:relative;z-index:5;transform:translateY(-14px)}
-.g-title{font-family:var(--serif);font-size:clamp(17px,2.6vw,24px);color:#F4ECEF;margin-top:16px;text-align:center;line-height:2.5;opacity:0;animation:g-fade 1.5s ease 1.5s forwards;position:relative;z-index:5;transform:translateY(16px)}
+.g-kicker{font-family:var(--serif);font-size:12px;letter-spacing:7px;color:#B9D2DD;opacity:0;animation:g-fade 1.4s ease 1s forwards;position:relative;z-index:5;transform:translateY(-14px)}
+.g-title{font-family:var(--sans);font-size:clamp(17px,2.6vw,24px);color:#F4ECEF;margin-top:16px;text-align:center;line-height:1.6;opacity:0;animation:g-fade 1.5s ease 1.5s forwards;position:relative;z-index:5;transform:translateY(16px)}
 @keyframes g-fade{to{opacity:1}}
 
 /* 五朵花圃 */
@@ -377,7 +377,7 @@ footer .back-garden:hover{color:var(--pink-deep)}
 <div id="garden">
   <img class="g-logo" src="assets/logo-v-white.png" alt="川花 RIVER FLOWER">
   <div class="g-kicker">從 河 川 長 出 花</div>
-  <div class="g-title">每一朵花,都是一條路。<br>選一朵,讓它帶你走。</div>
+  <div class="g-title">每朵花,都是一條路。選一朵,讓它帶你走。</div>
   <div id="g-field"></div>
   <div class="g-hint">點 一 朵 花 , 飄 進 它 的 世 界</div>
   <button id="g-skip">順流而下,直接進站</button>
