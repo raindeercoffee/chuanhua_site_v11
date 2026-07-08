@@ -344,6 +344,22 @@ footer .back-garden:hover{color:var(--pink-deep)}
   .g-title{font-size:15px;margin-top:6px}
   #g-field{margin-top:1rem;gap:2px 10px}
 }
+/* 視窗較矮時(高度不足):縮小花園上方 LOGO+標語區塊,把空間讓給五朵花,避免被裁掉 */
+@media (max-height:720px){
+  #garden{padding:1.2vh 0 60px}
+  .g-logo{width:min(56px,14vw);margin-bottom:.4rem}
+  .g-kicker{font-size:10px;letter-spacing:5px}
+  .g-title{font-size:clamp(13px,2vw,16px);margin-top:6px;line-height:1.55}
+  #g-field{margin-top:.9rem}
+}
+@media (max-height:560px){
+  #garden{padding:.8vh 0 44px}
+  .g-logo{width:44px;margin-bottom:.25rem}
+  .g-kicker{display:none}
+  .g-title{font-size:12px;margin-top:4px;line-height:1.4}
+  #g-field{margin-top:.6rem}
+  .g-hint{display:none}
+}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .reveal{opacity:1;transform:none}
