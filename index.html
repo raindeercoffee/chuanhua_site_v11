@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>川花 RIVER FLOWER｜一朵花,我們親手做好;一個品牌,我們陪它開花</title>
-<meta name="description" content="川花:從河川長出花。品牌行銷統籌、廣告投放與花藝教學——為你做好每一朵花,也陪你的品牌開花。">
+<title>川花 RIVER FLOWER｜一朵花，我們親手做好；一個品牌，我們陪它開花</title>
+<meta name="description" content="川花：從河川長出花。品牌行銷統籌、廣告投放與花藝教學——為你做好每一朵花，也陪你的品牌開花。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Serif+TC:wght@300;400;600;700&family=Noto+Sans+TC:wght@200;300;400;500;700&display=swap" rel="stylesheet">
@@ -174,11 +174,9 @@ nav.scrolled{box-shadow:0 4px 24px rgba(47,78,99,.08)}
 /* services 我們做的事 ─ 六種花 */
 .services{background:linear-gradient(180deg,var(--services-t),var(--services-b));color:var(--ink);position:relative;overflow:hidden}
 .services::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 36% at 82% 8%,rgba(255,255,255,.28),transparent 70%)}
-.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px;position:relative;z-index:2}
+.srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:46px;position:relative;z-index:2}
 .srv{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 26px;box-shadow:0 8px 26px rgba(47,78,99,.07);transition:transform .35s,box-shadow .35s,border-color .35s}
 .srv:hover{transform:translateY(-7px);box-shadow:0 18px 40px rgba(47,78,99,.12);border-color:rgba(217,142,163,.55)}
-.srv .no{font-family:var(--eng);font-style:italic;font-size:15px;color:var(--pink-deep);letter-spacing:2px}
-.srv .fl-name{display:inline-block;margin-left:8px;font-size:11px;letter-spacing:2px;color:var(--river);vertical-align:1px}
 .srv h3{font-family:var(--serif);font-size:19px;color:var(--river-deep);margin:8px 0 4px;line-height:1.5}
 .srv h3 small{display:block;font-size:13px;color:var(--river);font-weight:400}
 .srv p{font-size:13.5px;color:var(--ink-soft);font-weight:300;margin-top:10px}
@@ -268,8 +266,12 @@ nav.scrolled{box-shadow:0 4px 24px rgba(47,78,99,.08)}
 .contact-ways{display:flex;flex-direction:column;gap:14px}
 .way{display:flex;align-items:center;gap:14px;font-size:15px;color:var(--ink)}
 .way .k{min-width:84px;color:var(--river);font-size:12.5px;letter-spacing:2px}
+.way a{color:var(--river);text-underline-offset:3px}
 .line-box{text-align:center;background:linear-gradient(180deg,#F4FBF6,#EAF6EE);border:1px solid #D7EBDD;border-radius:18px;padding:28px 30px;display:flex;flex-direction:column;align-items:center;gap:14px}
-.qr-ph{width:140px;height:140px;border-radius:14px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:12px;flex-direction:column;gap:6px}
+.qr-ph{width:140px;height:140px;border-radius:14px;background:#fff;border:1px solid var(--line);display:block;padding:8px}
+.qr-ph img{display:block;width:100%;height:100%;object-fit:contain;border-radius:8px}
+.qr-ph:focus-visible{outline:3px solid rgba(6,199,85,.28);outline-offset:4px}
+.line-id{font-family:var(--eng);font-size:14px;letter-spacing:1px;color:var(--river)}
 .btn-line{background:#06C755;color:#fff;font-weight:500;box-shadow:0 8px 20px rgba(6,199,85,.3)}
 .terms{max-width:1100px;margin:64px auto 0;padding:0 24px 30px}
 .terms details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:14px;color:var(--ink-soft)}
@@ -312,9 +314,76 @@ footer .back-garden:hover{color:var(--pink-deep)}
 .st-eyebrow{font-family:var(--eng);font-style:italic;font-size:13px;letter-spacing:6px;color:var(--gold-deep);text-transform:uppercase}
 .st-head h2{color:#6D3F50;margin-top:10px}
 .st-head p{color:#8A6470;font-size:15px;max-width:520px;margin:6px auto 0}
-#studio .course-grid{margin-top:40px}
-#studio .course{border-color:#EFD8DC;box-shadow:0 12px 36px rgba(150,90,110,.12)}
+#studio .course-grid{margin-top:40px;grid-template-columns:repeat(3,1fr);gap:24px}
+#studio .course{border-color:#EFD8DC;box-shadow:0 12px 36px rgba(150,90,110,.12);display:flex;flex-direction:column}
+#studio .course .pains{flex:1}
 #studio .st-note{text-align:center;margin-top:38px;font-size:13px;color:#8A6470}
+/* 第三種卡色：晨光金（第一次免費諮詢） */
+.course.c-gold::after{background:var(--gold)}
+.c-gold .course-icon{background:linear-gradient(135deg,#FDF6EA,#F7E6CB)}
+.c-gold .pains li::before{color:var(--gold-deep)}
+.c-gold .btn{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;box-shadow:0 8px 20px rgba(217,154,99,.35)}
+.price-line{font-family:var(--serif);font-size:26px;color:#6D3F50;margin-bottom:18px}
+.price-line small{font-family:var(--sans);font-size:13px;color:#8A6470;margin-left:4px;font-weight:400}
+@media (max-width:1080px){#studio .course-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}}
+
+/* 第一次免費諮詢・互動預約卡 */
+#consult{position:fixed;inset:0;z-index:1300;overflow-y:auto;visibility:hidden;opacity:0;transition:opacity .6s ease,visibility .6s;background:linear-gradient(180deg,#FDF6F1 0%,#FBEDEF 45%,#F3E4EC 100%)}
+#consult.open{visibility:visible;opacity:1}
+.cs-wrap{max-width:640px;margin:0 auto;padding:46px 20px 70px;min-height:100%;display:flex;flex-direction:column;justify-content:center}
+.cs-card{position:relative;background:#FFF;border:1px solid #EFD8DC;border-radius:22px;box-shadow:0 18px 50px rgba(150,90,110,.16);padding:38px 36px 30px}
+.cs-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:18px;color:#B08894;cursor:pointer;line-height:1;padding:4px;z-index:2}
+.cs-close:hover{color:#6D3F50}
+.cs-eyebrow{font-family:var(--eng);font-style:italic;font-size:12px;letter-spacing:4px;color:var(--gold-deep);text-transform:uppercase;margin-bottom:8px}
+.cs-card h3{font-family:var(--serif);font-size:22px;color:#6D3F50;margin-bottom:6px}
+.cs-sub{font-size:13px;color:#8A6470;margin-bottom:20px}
+.cs-page{display:none}
+.cs-page.on{display:block;animation:cs-in .45s ease}
+@keyframes cs-in{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+.cs-check{display:flex;width:100%;gap:12px;align-items:flex-start;border:1px solid #EFD8DC;border-radius:14px;padding:12px 16px;margin-bottom:10px;cursor:pointer;user-select:none;transition:border .25s,background .25s,transform .2s;background:#FFF;font:inherit;text-align:left}
+.cs-check:hover{transform:translateY(-1px);border-color:var(--pink)}
+.cs-check .bx{width:20px;height:20px;min-width:20px;border-radius:6px;border:1.5px solid #E8CDD4;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:12px;color:transparent;transition:background .25s,border .25s,color .25s}
+.cs-check.sel{border-color:var(--pink-deep);background:#FDF4F6}
+.cs-check.sel .bx{background:var(--pink-deep);border-color:var(--pink-deep);color:#fff}
+.cs-check .tx{font-size:14px;color:var(--ink-soft);line-height:1.6}
+.cs-slider{margin-bottom:24px}
+.cs-slider .lab{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:#6D3F50;margin-bottom:10px}
+.cs-slider .val{font-family:var(--serif);font-size:21px;font-weight:700}
+.cs-slider .val small{font-size:11px;font-weight:400}
+.cs-range{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;outline:none;background:#EDE3E7;cursor:pointer}
+.cs-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:var(--c,#D98EA3);border:3px solid #fff;box-shadow:0 2px 8px rgba(109,63,80,.28);cursor:pointer}
+.cs-range::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--c,#D98EA3);border:3px solid #fff;box-shadow:0 2px 8px rgba(109,63,80,.28);cursor:pointer}
+.cs-range:focus-visible{box-shadow:0 0 0 4px rgba(217,142,163,.2)}
+.cs-ends{display:flex;justify-content:space-between;font-size:11px;color:#B08894;margin-top:7px}
+.cs-chips{margin:2px 0 4px}
+.cs-chip{display:inline-block;border:1px solid #E8CDD4;border-radius:99px;padding:8px 16px;font:inherit;font-size:13px;color:var(--ink-soft);margin:0 8px 10px 0;cursor:pointer;user-select:none;transition:background .25s,color .25s,border .25s;background:#FFF}
+.cs-chip.sel{background:linear-gradient(135deg,var(--pink),var(--pink-deep));color:#fff;border-color:transparent}
+.fm-field{margin-bottom:14px}
+.fm-field label{display:block;font-size:13px;color:#6D3F50;letter-spacing:1px;margin-bottom:5px}
+.fm-field input,.fm-field select,.fm-field textarea{width:100%;border:1px solid #E8CDD4;border-radius:12px;background:#FFF;padding:10px 12px;font-family:var(--sans);font-size:14px;color:var(--ink);outline:none;transition:border .25s,box-shadow .25s}
+.fm-field input:focus,.fm-field select:focus,.fm-field textarea:focus{border-color:var(--pink-deep);box-shadow:0 0 0 3px rgba(217,142,163,.15)}
+.fm-field textarea{resize:vertical;min-height:66px}
+.fm-row{display:grid;grid-template-columns:1fr 1.4fr;gap:10px}
+.fm-msg{font-size:13px;text-align:center;margin-top:12px;display:none}
+.fm-msg.err{display:block;color:#B4443E}
+.cs-nav{display:flex;align-items:center;justify-content:space-between;margin-top:24px}
+.cs-ghost{background:none;border:none;color:#B08894;font-family:var(--sans);font-size:13px;cursor:pointer;padding:10px 6px;transition:color .25s}
+.cs-ghost:hover{color:#6D3F50}
+.cs-ghost.hide{visibility:hidden}
+.cs-dots{display:flex;gap:8px}
+.cs-dot{width:8px;height:8px;border-radius:99px;background:#EBD6DC;transition:width .3s,background .3s}
+.cs-dot.on{width:22px;background:var(--pink-deep)}
+.cs-btn{display:inline-block;border:none;cursor:pointer;font-family:var(--sans);font-size:14px;padding:12px 28px;border-radius:99px;color:#fff;background:linear-gradient(135deg,var(--gold),var(--gold-deep));box-shadow:0 8px 20px rgba(217,154,99,.35);transition:transform .25s,box-shadow .25s}
+.cs-btn:hover{transform:translateY(-2px)}
+.cs-btn:disabled{opacity:.6;cursor:default;transform:none}
+.cs-ok{text-align:center;padding:14px 0 6px}
+.cs-ok .okflower{font-size:34px;color:var(--pink-deep)}
+.cs-ok h4{font-family:var(--serif);font-size:20px;color:#6D3F50;margin:10px 0 6px}
+.cs-ok p{font-size:14px;color:#8A6470;margin-bottom:6px}
+.btn-line-cs{display:inline-block;margin-top:14px;padding:13px 30px;border-radius:99px;background:#06C755;color:#fff;font-size:15px;text-decoration:none;box-shadow:0 8px 20px rgba(6,199,85,.3);transition:transform .25s}
+.btn-line-cs:hover{transform:translateY(-2px)}
+@media(max-width:560px){.cs-wrap{justify-content:flex-start;padding-top:20px}.cs-card{padding:28px 20px 24px}.fm-row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){#consult,.cs-page.on{transition:none;animation:none}}
 /* 教室裡的緩慢花瓣 */
 .st-petal{position:fixed;top:-30px;width:14px;height:11px;border-radius:80% 0 80% 0;background:linear-gradient(135deg,var(--pink-deep),rgba(245,212,220,.5));opacity:0;animation:fall linear infinite;pointer-events:none}
 
@@ -379,10 +448,10 @@ footer .back-garden:hover{color:var(--pink-deep)}
 <div id="garden">
   <img class="g-logo" src="assets/logo-v-white.png" alt="川花 RIVER FLOWER">
   <div class="g-kicker">從 河 川 長 出 花</div>
-  <div class="g-title">每朵花,都是一條路。選一朵,讓它帶你走。</div>
+  <div class="g-title">每朵花，都是一條路。選一朵，讓它帶著你走。</div>
   <div id="g-field"></div>
-  <div class="g-hint">點 一 朵 花 , 飄 進 它 的 世 界</div>
-  <button id="g-skip">順流而下,直接進站</button>
+  <div class="g-hint">點 一 朵 花，飄 進 它 的 世 界</div>
+  <button id="g-skip">順流而下，直接進站</button>
   <div class="g-waves">
     <div class="g-wave gw1" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 90%22 preserveAspectRatio=%22none%22><path d=%22M0,44 C220,80 420,8 620,44 C820,78 1020,10 1200,44 L1200,90 L0,90 Z%22 fill=%22%234E8CB0%22/></svg>')"></div>
     <div class="g-wave gw2" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 64%22 preserveAspectRatio=%22none%22><path d=%22M0,30 C250,58 450,4 650,30 C850,56 1050,8 1200,30 L1200,64 L0,64 Z%22 fill=%22%237FB4CE%22/></svg>')"></div>
@@ -392,7 +461,7 @@ footer .back-garden:hover{color:var(--pink-deep)}
 <!-- ═════════ 開花轉場 ═════════ -->
 <div id="bloomfx">
   <div class="fx-circle"></div>
-  <div class="fx-text">正在為你,推開開花的門——</div>
+  <div class="fx-text">正在為你，推開開花的門——</div>
 </div>
 
 <!-- ═════════ L2 · 主頁 ═════════ -->
@@ -417,8 +486,8 @@ footer .back-garden:hover{color:var(--pink-deep)}
   <header id="shore">
     <div class="wrap">
       <img class="shore-logo" src="assets/logo-v-color.png" alt="川花 RIVER FLOWER">
-      <h1>一朵花,我們親手做好;<br>一個品牌,我們陪它<em>開花</em>。</h1>
-      <p>川花是一條安靜的河。我們把內容、行銷與美感,一瓢一瓢澆進你的品牌裡——直到它開出自己的樣子。</p>
+      <h1>每一朵花，都是一個品牌；<br>請讓我們陪你<em>開花</em>。</h1>
+      <p>川花是安靜而真實的河，長出每一朵靈魂等待綻放的花。我們將內容行銷與市場脈動，一瓢一瓢澆進你的品牌裡——直到它開出自己的樣子。</p>
     </div>
   </header>
 
@@ -428,9 +497,9 @@ footer .back-garden:hover{color:var(--pink-deep)}
       <div class="about-grid">
         <div class="about-body">
           <div class="eyebrow reveal">WHO WE ARE</div>
-          <h2 class="reveal">種下每一個品牌夢,<br>陪它安靜地<em>開花</em></h2>
-          <p class="reveal d1">不同於許多行銷顧問公司的一次性販售,我們集結<strong>實戰電商、廣告投放、靈敏嗅覺、獨特美感</strong>,為你打造最符合商品靈魂的口碑行銷——讓每一次曝光,都像一朵花,剛好開在對的人眼前。</p>
-          <p class="reveal d2">絕不做廣撒花冤枉錢的行銷。我們致力挖掘每一個品牌的<strong>蛋黃層</strong>,把最核心、最有共鳴的受眾,慢慢向外種開。讓品牌被記住、被喜歡,然後,愛上。</p>
+          <h2 class="reveal">種下每一個品牌夢，<br>陪它安靜地<em>開花</em></h2>
+          <p class="reveal d1">不同於許多行銷顧問公司的一次性販售，我們集結<strong>實戰電商、整合行銷、市場嗅覺、獨特美感</strong>，為你打造最符合商品靈魂的口碑——讓每一次曝光都是一朵花，剛好開在對的人眼前。</p>
+          <p class="reveal d2">絕不做廣撒花冤枉錢的行銷。我們致力挖掘每一個品牌的<strong>蛋黃層</strong>，把最核心、最有共鳴的受眾，慢慢向外開展。讓品牌被記住、喜歡，然後愛上。</p>
           <div class="kw-row reveal d3">
             <span class="kw">行銷統籌</span><span class="kw">電商實戰</span><span class="kw">企業顧問</span>
             <span class="kw">美學落地</span><span class="kw">活動策畫</span><span class="kw">品牌轉型</span>
@@ -448,26 +517,20 @@ footer .back-garden:hover{color:var(--pink-deep)}
     <div class="wrap">
       <div class="eyebrow reveal">WHAT WE DO</div>
       <h2 class="reveal">我們做的事</h2>
-      <p class="lead reveal d1">六種花,同一件事:把你的品牌,種進對的人心裡。</p>
+      <p class="lead reveal d1">把你的品牌，種進對的人心裡。</p>
       <div class="srv-grid">
         <article class="srv reveal">
           <svg class="fl-icon" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="7" cy="9" r="2.6" fill="#DDEBF5"/><circle cx="14" cy="5.6" r="2.2" fill="#EAF2FA"/><circle cx="19.6" cy="10" r="2.7" fill="#D3E5F2"/><circle cx="11" cy="14" r="2.4" fill="#E4EEF8"/><circle cx="18" cy="17" r="2.1" fill="#DDEBF5"/><circle cx="8.4" cy="19.6" r="2.5" fill="#EAF2FA"/><circle cx="7" cy="9" r=".8" fill="#F7E9B8"/><circle cx="19.6" cy="10" r=".8" fill="#F7E9B8"/><circle cx="8.4" cy="19.6" r=".8" fill="#F7E9B8"/></svg>
-          <div class="no">01<span class="fl-name">滿天星</span></div><h3>女裝廣告<small>臉書投放</small></h3><p>不是花錢買流量,是找到最對的那群人。精準投放,讓每一分廣告費都落在蛋黃層,真正有共鳴的她們。</p></article>
+          <h3>廣告曝光<small>臉書投放</small></h3><p>不是花錢買流量，是找到最對的那群人。精準投放，讓每一分廣告費都落在蛋黃層，找到真正有共鳴的人。</p></article>
         <article class="srv reveal d1">
           <svg class="fl-icon" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M13 4 C17 3 21 6 20.6 10 C22 13 20 17 16.6 18 C14.6 21 10.6 21 8.6 18.6 C5 18 3.6 14 5 11 C4.6 7 8 4 11 4.6 Z" fill="#F3C6D2"/><path d="M13 7 C15.6 6.4 18 8.4 17.6 11 C18.6 13 17 15.6 14.6 16 C13 18 10 17.6 8.9 15.9 C6.6 15.6 5.6 13 6.6 11 C6.4 8.6 8.6 6.6 10.6 7.2 Z" fill="#EDAEC0"/><circle cx="12.8" cy="11.8" r="2.4" fill="#F5D8E0"/></svg>
-          <div class="no">02<span class="fl-name">康乃馨</span></div><h3>女裝品牌<small>行銷統籌</small></h3><p>從策略到執行,我們最懂女性消費心理。讓品牌的靈魂穿透每個觸點,長出自己的根,留下深刻印記。</p></article>
+          <h3>整合行銷<small>打造品牌</small></h3><p>從策略到執行，我們最懂消費者心理。讓品牌的靈魂穿透每個觸點，長出自己的根，留下深刻印記。</p></article>
         <article class="srv reveal d2">
-          <svg class="fl-icon" viewBox="0 0 26 26" fill="none" aria-hidden="true"><ellipse cx="13" cy="5.4" rx="2.5" ry="4.2" fill="#FFFFFF" stroke="#E7EDF2" stroke-width=".5"/><ellipse cx="13" cy="20.6" rx="2.5" ry="4.2" fill="#FFFFFF" stroke="#E7EDF2" stroke-width=".5"/><ellipse cx="5.4" cy="13" rx="4.2" ry="2.5" fill="#FFFFFF" stroke="#E7EDF2" stroke-width=".5"/><ellipse cx="20.6" cy="13" rx="4.2" ry="2.5" fill="#FFFFFF" stroke="#E7EDF2" stroke-width=".5"/><ellipse cx="7.6" cy="7.6" rx="3.4" ry="2.2" fill="#FFFFFF" stroke="#E7EDF2" stroke-width=".5" transform="rotate(-45 7.6 7.6)"/><ellipse cx="18.4" cy="7.6" rx="3.4" ry="2.2" fill="#FFFFFF" stroke="#E7EDF2" stroke-width=".5" transform="rotate(45 18.4 7.6)"/><ellipse cx="7.6" cy="18.4" rx="3.4" ry="2.2" fill="#FFFFFF" stroke="#E7EDF2" stroke-width=".5" transform="rotate(45 7.6 18.4)"/><ellipse cx="18.4" cy="18.4" rx="3.4" ry="2.2" fill="#FFFFFF" stroke="#E7EDF2" stroke-width=".5" transform="rotate(-45 18.4 18.4)"/><circle cx="13" cy="13" r="3.4" fill="#F7DE8F"/></svg>
-          <div class="no">03<span class="fl-name">小白菊</span></div><h3>兒童劇團<small>行銷顧問</small></h3><p>藝文品牌需要的不只是曝光,是讓對的家庭找到你。觸及那些真正會感動、帶孩子一再回來的受眾。</p></article>
-        <article class="srv reveal">
-          <svg class="fl-icon" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M13 23 C13 17 13 12 13 7" stroke="#A9C3A0" stroke-width="1.4" stroke-linecap="round"/><ellipse cx="13" cy="5" rx="1.8" ry="2.4" fill="#C7B8E0"/><ellipse cx="10.8" cy="8" rx="1.7" ry="2.2" fill="#D3C6E8" transform="rotate(-18 10.8 8)"/><ellipse cx="15.2" cy="8" rx="1.7" ry="2.2" fill="#D3C6E8" transform="rotate(18 15.2 8)"/><ellipse cx="10.4" cy="11.4" rx="1.6" ry="2.1" fill="#C7B8E0" transform="rotate(-20 10.4 11.4)"/><ellipse cx="15.6" cy="11.4" rx="1.6" ry="2.1" fill="#C7B8E0" transform="rotate(20 15.6 11.4)"/><ellipse cx="11" cy="14.6" rx="1.5" ry="2" fill="#DCD2ED" transform="rotate(-22 11 14.6)"/><ellipse cx="15" cy="14.6" rx="1.5" ry="2" fill="#DCD2ED" transform="rotate(22 15 14.6)"/></svg>
-          <div class="no">04<span class="fl-name">薰衣草</span></div><h3>繪本故事<small>Podcast 升級</small></h3><p>有靈魂、有理想,但還沒被聽見?我們幫你找對聽眾、優化內容,讓你的聲音從自說自話,變成真正的迴響。</p></article>
-        <article class="srv reveal d1">
           <svg class="fl-icon" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M13 23 C13 19 13 16 13 13" stroke="#A9C3A0" stroke-width="1.4" stroke-linecap="round"/><path d="M13 14 C7 12 6.4 5.4 10 3.4 C12 2.4 15 3 16.4 5 C19.6 4.6 21 8 19.4 10.6 C17.8 13.2 15 14.4 13 14 Z" fill="#FBFDFC" stroke="#E2EAE6" stroke-width=".6"/><path d="M13 13.6 C13 10 13.6 7 15 5.4" stroke="#F2D98C" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <div class="no">05<span class="fl-name">海芋</span></div><h3>品牌整合<small>行銷企劃</small></h3><p>從企業轉型、內容企劃到廣告轉換,串起每一個消費觸點。讓商品不只是販售,而是品牌被記住的靈魂至高點。</p></article>
+          <h3>品牌整合<small>行銷企劃</small></h3><p>從企業轉型、內容企劃到廣告轉換，串起每一個消費者的完美購物體驗。讓商品不只是被販售，而是品牌能被記住的完美記憶點。</p></article>
         <article class="srv reveal d2">
           <svg class="fl-icon" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M13 21 C8 21 4.6 17 5.4 12.6 C6 9 9 6.4 13 6.4 C17 6.4 20 9 20.6 12.6 C21.4 17 18 21 13 21 Z" fill="#F6E3EC"/><path d="M13 20 C9.4 20 7 17 7.6 13.6 C8 11 10.4 9 13 9 C15.6 9 18 11 18.4 13.6 C19 17 16.6 20 13 20 Z" fill="#EFD1DF"/><path d="M13 19 C10.6 19 9 17 9.4 14.6 C9.8 13 11.4 11.6 13 11.6 C14.6 11.6 16.2 13 16.6 14.6 C17 17 15.4 19 13 19 Z" fill="#E7BFD2"/><circle cx="13" cy="15.4" r="1.6" fill="#F7E9B8"/></svg>
-          <div class="no">06<span class="fl-name">洋桔梗</span></div><h3>品牌重塑<small>內容策略</small></h3><p>重新梳理品牌靈魂、受眾與溝通語言,建立一致的內容矩陣。讓老品牌長出新樣貌,也讓新品牌站穩自己的位置。</p></article>
+          <h3>品牌重塑<small>內容策略</small></h3><p>重新梳理品牌靈魂、受眾與溝通語言，建立一致的內容矩陣。讓老品牌長出新樣貌，也讓新品牌站穩自己的位置。</p></article>
       </div>
     </div>
   </section>
@@ -477,20 +540,13 @@ footer .back-garden:hover{color:var(--pink-deep)}
     <div class="wrap">
       <div class="eyebrow reveal">WHAT WE BLOOMED</div>
       <h2 class="reveal">我們開過的花</h2>
-      <p class="lead reveal d1">每一個品牌,都是我們蹲下來、聽完河聲之後,親手開出來的。</p>
+      <p class="lead reveal d1">每一個品牌，都是我們蹲下來、聽完河聲之後，親手開出來的。</p>
       <div class="case-grid">
-        <article class="case reveal"><div class="ind">美妝保養</div><h3>雪芙蘭</h3><div class="strat">Facebook 精準投放策略</div><div class="nums"><div class="num"><b>×4.2</b><span>廣告回報率 ROAS</span></div><div class="num"><b>35 天</b><span>品牌重塑週期</span></div></div></article>
-        <article class="case reveal d1"><div class="ind">美妝保養</div><h3>廣源良</h3><div class="strat">蛋黃層受眾純化策略</div><div class="nums"><div class="num"><b>↑ 68%</b><span>核心粉絲黏著率</span></div><div class="num"><b>×2.4</b><span>受眾精準度提升</span></div></div></article>
-        <article class="case reveal d2"><div class="ind">女性生理用品</div><h3>康乃馨</h3><div class="strat">女性溫柔溝通行銷策略</div><div class="nums"><div class="num"><b>×2.8</b><span>自然觸及倍增</span></div><div class="num"><b>↑ 53%</b><span>品牌好感度提升</span></div></div></article>
-        <article class="case reveal"><div class="ind">食品伴手禮</div><h3>舊振南</h3><div class="strat">節慶整合行銷企劃</div><div class="nums"><div class="num"><b>↑ 41%</b><span>官網轉換率</span></div><div class="num"><b>完售</b><span>禮盒預購首週</span></div></div></article>
-        <article class="case reveal d1"><div class="ind">食品伴手禮</div><h3>快車肉乾</h3><div class="strat">品牌年輕化內容策略</div><div class="nums"><div class="num"><b>↑ 57%</b><span>新客佔比成長</span></div><div class="num"><b>×2.1</b><span>社群自然觸及</span></div></div></article>
-        <article class="case reveal d2"><div class="ind">茶葉禮品</div><h3>小茶栽堂</h3><div class="strat">品牌靈魂重塑 × 內容矩陣</div><div class="nums"><div class="num"><b>×3.0</b><span>內容留存率提升</span></div><div class="num"><b>重建</b><span>品牌識別體系</span></div></div></article>
-        <article class="case reveal"><div class="ind">茶葉禮品</div><h3>京盛宇</h3><div class="strat">儀式感行銷 × 故事策略</div><div class="nums"><div class="num"><b>×3.1</b><span>社群互動率</span></div><div class="num"><b>↑ 44%</b><span>高客單忠實客成長</span></div></div></article>
-        <article class="case reveal d1"><div class="ind">3C 週邊</div><h3>犀牛盾</h3><div class="strat">女性科技族群開發策略</div><div class="nums"><div class="num"><b>↑ 89%</b><span>新受眾規模成長</span></div><div class="num"><b>×3</b><span>女性客佔比翻倍</span></div></div></article>
-        <article class="case reveal d2"><div class="ind">女性運動服飾</div><h3>Macaca</h3><div class="strat">在地女性認同品牌策略</div><div class="nums"><div class="num"><b>↑ 72%</b><span>粉絲黏著率</span></div><div class="num"><b>深化</b><span>台灣本土認同感知</span></div></div></article>
-        <article class="case reveal"><div class="ind">芳療 · SPA</div><h3>肯園 CanJune</h3><div class="strat">療癒品牌升維策略</div><div class="nums"><div class="num"><b>×2.6</b><span>頂級客群轉化率</span></div><div class="num"><b>↑ 61%</b><span>品牌感知層次提升</span></div></div></article>
+        <article class="case reveal d1"><div class="ind">個性女裝</div><h3>Mosdress</h3><div class="strat">品牌年輕化內容策略</div><div class="nums"><div class="num"><b>↑ 57%</b><span>新客佔比成長</span></div><div class="num"><b>×2.1</b><span>社群自然觸及</span></div></div></article>
+        <article class="case reveal d2"><div class="ind">質感服飾</div><h3>Harper</h3><div class="strat">品牌靈魂重塑 × 內容矩陣</div><div class="nums"><div class="num"><b>×3.0</b><span>內容留存率提升</span></div><div class="num"><b>重建</b><span>品牌識別體系</span></div></div></article>
+        <article class="case reveal"><div class="ind">Lifesyle</div><h3>小刺蝟</h3><div class="strat">儀式感行銷 × 故事策略</div><div class="nums"><div class="num"><b>×3.1</b><span>社群互動率</span></div><div class="num"><b>↑ 44%</b><span>高客單忠實客成長</span></div></div></article>
       </div>
-      <div class="case-note reveal">· 游標移入,感受每一朵花開 ·</div>
+      <div class="case-note reveal">· 游標移入，感受每一朵花開 ·</div>
     </div>
   </section>
 
@@ -499,31 +555,29 @@ footer .back-garden:hover{color:var(--pink-deep)}
     <div class="wrap">
       <div class="eyebrow reveal">COURSES & SERVICE</div>
       <h2 class="reveal">兩種<em>開花</em>的方式</h2>
-      <p class="lead reveal d1">一種,是讓你的品牌開花;一種,是讓你的手,學會開一朵花。走進教室,空間會為你換一個樣子。</p>
+      <p class="lead reveal d1">一種，是讓你的品牌開花；一種，是讓你的手學會開一朵花。走進教室，讓花朵為你靈魂升級。</p>
       <div class="course-grid">
         <article class="course c-blue reveal d1">
           <div class="course-icon"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M5 24 L5 14 M12 24 L12 8 M19 24 L19 12 M26 24 L26 5" stroke="#5F93A8" stroke-width="3" stroke-linecap="round"/><circle cx="26" cy="5" r="3" fill="#D98EA3"/></svg></div>
-          <h3>品牌行銷付費諮詢</h3>
+          <h3>品牌行銷諮詢預約</h3>
           <div class="cat">MARKETING CONSULTING・一對一</div>
           <ul class="pains">
-            <li>品牌故事說不清楚,客人記不住你</li>
-            <li>內容、廣告、社群各做各的,沒有整合</li>
-            <li>投了廣告,成效卻一直卡在原地</li>
+            <li>品牌故事說不清楚，客人記不住你</li>
+            <li>內容、廣告、社群都做了，卻沒有好好整合</li>
+            <li>投了廣告，成效卻一直卡在原地</li>
           </ul>
           <button class="btn" data-studio>走進開花教室</button>
-          <p class="pay-note">時長與收費規劃中 <span class="todo">待確認</span></p>
         </article>
         <article class="course c-pink reveal d2">
           <div class="course-icon"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 26 C15 20 15 16 15 12" stroke="#D98EA3" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="15" cy="8" rx="3.4" ry="5" fill="#D98EA3"/><ellipse cx="10.6" cy="10.4" rx="3.2" ry="4.4" fill="#EFBFCA" transform="rotate(-40 10.6 10.4)"/><ellipse cx="19.4" cy="10.4" rx="3.2" ry="4.4" fill="#EFBFCA" transform="rotate(40 19.4 10.4)"/><circle cx="15" cy="10.4" r="2" fill="#EFC08F"/><path d="M15 19 C11 17 9 14 9 11" stroke="#97BC8F" stroke-width="2" stroke-linecap="round"/></svg></div>
           <h3>花藝教學課</h3>
           <div class="cat">FLORAL CLASS・小班制</div>
           <ul class="pains">
-            <li>想學花藝,卻不知道從哪一朵開始</li>
-            <li>想送自己一段安靜、專注的時間</li>
-            <li>想把美感帶回家、帶進生活與工作</li>
+            <li>想學花藝，卻不知道該如何開始</li>
+            <li>送給自己一段安靜、療癒的時間</li>
+            <li>想把美感帶回家，帶到生活與工作</li>
           </ul>
           <button class="btn" data-studio>走進開花教室</button>
-          <p class="pay-note">時長與收費規劃中 <span class="todo">待確認</span></p>
         </article>
       </div>
     </div>
@@ -533,14 +587,14 @@ footer .back-garden:hover{color:var(--pink-deep)}
   <section class="flow esec on-dark" id="flow" data-label="開花的流程">
     <div class="wrap">
       <div class="eyebrow reveal">HOW IT WORKS</div>
-      <h2 class="reveal">從付款到開花,只要四步</h2>
-      <p class="lead reveal d1">線上完成付款後,由川花官方 LINE 專人與你確認時間,不用來回寄信。</p>
+      <h2 class="reveal">從付款到開花，只要四步</h2>
+      <p class="lead reveal d1">線上完成付款後，由川花官方 LINE 與你聯繫</p>
       <div class="steps reveal" id="steps">
         <div class="step-line"></div>
-        <div class="step"><div class="step-dot">1</div><h4>選擇課程並付款</h4><p>選定諮詢或花藝課,透過線上金流完成付款(信用卡)</p></div>
-        <div class="step"><div class="step-dot">2</div><h4>看見付款成功頁</h4><p>付款完成後,頁面會確認你的訂單與金額</p></div>
-        <div class="step"><div class="step-dot">3</div><h4>加入官方 LINE</h4><p>成功頁上有官方 LINE 連結,加入後回報姓名</p></div>
-        <div class="step"><div class="step-dot">4</div><h4>專人確認時段</h4><p>由專人與你確認上課 / 諮詢時間,完成預約</p></div>
+        <div class="step"><div class="step-dot">1</div><h4>選擇課程並付款</h4><p>選定諮詢或花藝課，並完成線上付款</p></div>
+        <div class="step"><div class="step-dot">2</div><h4>看見付款成功頁</h4><p>付款完成後，頁面會確認你的訂單與金額</p></div>
+        <div class="step"><div class="step-dot">3</div><h4>加入官方 LINE</h4><p>成功頁上有官方 LINE 連結，加入後回報姓名</p></div>
+        <div class="step"><div class="step-dot">4</div><h4>專人確認時段</h4><p>由專人與你確認時間，完成預約</p></div>
       </div>
     </div>
   </section>
@@ -550,24 +604,23 @@ footer .back-garden:hover{color:var(--pink-deep)}
     <div class="wrap">
       <div class="eyebrow reveal">POLICY</div>
       <h2 class="reveal">退款與改期規則</h2>
-      <p class="lead reveal d1">先把規則說清楚,是我們表達尊重的方式。<span class="todo">草案,待確認後生效</span></p>
       <div class="policy-grid">
         <div class="policy-card reveal d1">
-          <h4><span class="dot"></span>退款規則(草案)</h4>
+          <h4><span class="dot"></span>退款規則</h4>
           <ul>
-            <li>課程 / 諮詢日 7 天前申請退款:全額退款</li>
-            <li>課程 / 諮詢日 3–6 天前申請:退款 50%</li>
-            <li>課程 / 諮詢日 2 天內(含當日):恕不退款,可改期一次</li>
+            <li>課程 / 諮詢日 7 天前申請退款：全額退款</li>
+            <li>課程 / 諮詢日 3–6 天前申請：退款 50%</li>
+            <li>課程 / 諮詢日 2 天內(含當日)：恕不退款，可改期一次</li>
             <li>退款將於申請成立後 7–14 個工作天內退回原付款方式</li>
           </ul>
         </div>
         <div class="policy-card reveal d2">
-          <h4><span class="dot"></span>改期與其他(草案)</h4>
+          <h4><span class="dot"></span>改期與其他</h4>
           <ul>
-            <li>每筆訂單可免費改期一次,請於原時段 2 天前透過官方 LINE 提出</li>
-            <li>如遇天災或不可抗力因素停課,將主動通知並協助改期或全額退款</li>
-            <li>花藝課材料為當日新鮮花材,無法保留至改期日,改期需酌收材料費</li>
-            <li>其他未盡事宜,請透過官方 LINE 與客服聯繫</li>
+            <li>每筆訂單可免費改期一次，請於原時段 2 天前透過官方 LINE 提出</li>
+            <li>如遇天災或不可抗力因素停課，將主動通知並協助改期或全額退款</li>
+            <li>花藝課材料為當日新鮮花材，無法保留至改期日，改期需酌收材料費</li>
+            <li>其他未盡事宜，請透過官方 LINE 與客服聯繫</li>
           </ul>
         </div>
       </div>
@@ -598,8 +651,8 @@ footer .back-garden:hover{color:var(--pink-deep)}
     </svg>
     <div class="wrap">
       <div class="res-eyebrow reveal">ARE YOU THE ONE</div>
-      <div class="res-title reveal d1">品牌有了想法,<br>但還無法展翅飛翔嗎?</div>
-      <p class="res-body reveal d2">不管你是正在轉型的品牌,建立自己宇宙的創作者,<br>還是有靈魂、有美學,但還沒找到落地方式的人——<br>我們在找的,是靈魂最對的彼此。</p>
+      <div class="res-title reveal d1">品牌有了想法，<br>但還無法展翅飛翔嗎?</div>
+      <p class="res-body reveal d2">不管你是正在轉型的品牌，建立自己宇宙的創作者，<br>還是有靈魂、有美學，但還沒找到落地方式的人——<br>我們在找的，是靈魂最對的彼此。</p>
       <a class="btn btn-res reveal d3" href="#contact">聯絡我們</a>
     </div>
   </section>
@@ -608,21 +661,21 @@ footer .back-garden:hover{color:var(--pink-deep)}
   <section class="contact" id="contact">
     <div class="wrap">
       <div class="eyebrow reveal">CONTACT</div>
-      <h2 class="reveal">找川花,聊聊你的品牌</h2>
-      <p class="lead reveal d1">課程報名、諮詢預約、合作洽談,都歡迎透過官方 LINE 找我們。</p>
+      <h2 class="reveal">找川花，聊聊你的品牌</h2>
+      <p class="lead reveal d1">課程報名、諮詢預約、合作洽談，都歡迎透過官方 LINE 找我們。</p>
       <div class="contact-card reveal d1">
         <div class="contact-ways">
           <div class="way"><span class="k">客服信箱</span><span>riverflower2025@gmail.com</span></div>
           <div class="way"><span class="k">客服電話</span><span>02-2885-4268</span></div>
-          <div class="way"><span class="k">服務時間</span><span>週一至週五 10:00–18:00 <span class="todo">待確認</span></span></div>
-          <div class="way"><span class="k">回覆方式</span><span>官方 LINE 為主,信箱 1–2 個工作天內回覆</span></div>
+          <div class="way"><span class="k">服務時間</span><span>週一至週五 10：00–18：00</span></div>
+          <div class="way"><span class="k">官方 LINE</span><span><a href="https://line.me/R/ti/p/@riverflower2025" target="_blank" rel="noopener">@riverflower2025</a>，信箱 1–2 個工作天內回覆</span></div>
         </div>
         <div class="line-box">
-          <div class="qr-ph">
-            <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="#5A7280" stroke-width="2"/><rect x="20" y="2" width="12" height="12" rx="2" stroke="#5A7280" stroke-width="2"/><rect x="2" y="20" width="12" height="12" rx="2" stroke="#5A7280" stroke-width="2"/><rect x="20" y="20" width="5" height="5" fill="#5A7280"/><rect x="27" y="27" width="5" height="5" fill="#5A7280"/></svg>
-            官方 LINE QR Code<br><span class="todo">帳號建立後放入</span>
-          </div>
-          <a class="btn btn-line" href="#" onclick="return false;">加入官方 LINE <span class="todo" style="background:rgba(255,255,255,.9)">連結待補</span></a>
+          <a class="qr-ph" href="https://line.me/R/ti/p/@riverflower2025" target="_blank" rel="noopener" aria-label="掃描或開啟川花官方 LINE">
+            <img src="assets/line-qr-riverflower2025.png" alt="川花官方 LINE @riverflower2025 QR Code" width="320" height="320">
+          </a>
+          <div class="line-id">@riverflower2025</div>
+          <a class="btn btn-line" href="https://line.me/R/ti/p/@riverflower2025" target="_blank" rel="noopener">加入官方 LINE</a>
         </div>
       </div>
     </div>
@@ -631,20 +684,20 @@ footer .back-garden:hover{color:var(--pink-deep)}
       <details>
         <summary>服務條款(簡版)</summary>
         <div class="t-body">
-          <p>1. 本網站由「川花有限公司」(以下稱本公司)經營,提供品牌行銷諮詢與花藝教學課程之銷售與預約服務。</p>
-          <p>2. 消費者於本網站完成付款,即視為同意本服務條款與退款改期規則。</p>
-          <p>3. 課程與諮詢時段採預約制,付款完成後由官方 LINE 專人與消費者確認時段。</p>
-          <p>4. 本公司保留調整課程內容、時段與價格之權利;已成立之訂單不受調價影響。</p>
-          <p>5. 條款未盡事宜,依中華民國相關法令辦理。</p>
+          <p>1. 本網站由「川花有限公司」(以下稱本公司)經營，提供品牌行銷諮詢與花藝教學課程之銷售與預約服務。</p>
+          <p>2. 消費者於本網站完成付款，即視為同意本服務條款與退款改期規則。</p>
+          <p>3. 課程與諮詢時段採預約制，付款完成後由官方 LINE 專人與消費者確認時段。</p>
+          <p>4. 本公司保留調整課程內容、時段與價格之權利；已成立之訂單不受調價影響。</p>
+          <p>5. 條款未盡事宜，依中華民國相關法令辦理。</p>
         </div>
       </details>
       <details>
         <summary>隱私權政策(簡版)</summary>
         <div class="t-body">
-          <p>1. 本公司於您報名課程或預約諮詢時,將蒐集姓名、電話、Email 等必要個人資料,僅用於訂單處理、課程通知與客服聯繫。</p>
-          <p>2. 您的個人資料不會提供予第三人,亦不會用於前述目的以外之用途;金流資料由合作之金流服務商依其資安標準處理,本公司不留存信用卡卡號。</p>
+          <p>1. 本公司於您報名課程或預約諮詢時，將蒐集姓名、電話、Email 等必要個人資料，僅用於訂單處理、課程通知與客服聯繫。</p>
+          <p>2. 您的個人資料不會提供予第三人，亦不會用於前述目的以外之用途；金流資料由合作之金流服務商依其資安標準處理，本公司不留存信用卡卡號。</p>
           <p>3. 您可隨時透過客服信箱或官方 LINE 申請查詢、修改或刪除您的個人資料。</p>
-          <p>4. 本政策如有修訂,將公告於本網站。</p>
+          <p>4. 本政策如有修訂，將公告於本網站。</p>
         </div>
       </details>
     </div>
@@ -653,7 +706,7 @@ footer .back-garden:hover{color:var(--pink-deep)}
       <img src="assets/logo-v-color.png" alt="川花 RIVER FLOWER"><br>
       <span class="co-line">© 2026 川花有限公司・統一編號 60605921・台北市信義區忠孝東路五段 508 號 2 樓之 11</span><br>
       <span class="co-line">riverflower2025@gmail.com・02-2885-4268</span>
-      <br><a class="back-garden" href="#" id="reGarden">回到花園,再選一朵花</a>
+      <br><a class="back-garden" href="#" id="reGarden">回到花園，再選一朵花</a>
     </footer>
   </section>
 </div>
@@ -668,37 +721,148 @@ footer .back-garden:hover{color:var(--pink-deep)}
     <div class="st-head">
       <div class="st-eyebrow">BLOOM STUDIO</div>
       <h2>開花教室</h2>
-      <p>推開門,空氣就不一樣了。這裡只做兩件事——<br>讓你的品牌開花,或讓你的手,學會開一朵花。</p>
+      <p>推開門，空氣就不一樣了。第一次來，先坐下來聊聊，不收費——<br>聊完之後，讓你的品牌開花，或讓你的手，學會開一朵花。</p>
     </div>
     <div class="course-grid">
+      <article class="course c-gold">
+        <div class="course-icon"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 4 C8.4 4 3.5 8.2 3.5 13.4 C3.5 16.6 5.3 19.4 8.1 21.1 L7 26 L12.2 22.5 C13.1 22.7 14 22.8 15 22.8 C21.6 22.8 26.5 18.6 26.5 13.4 C26.5 8.2 21.6 4 15 4 Z" stroke="#D99A63" stroke-width="2.2" stroke-linejoin="round"/><circle cx="10.5" cy="13.4" r="1.6" fill="#D98EA3"/><circle cx="15" cy="13.4" r="1.6" fill="#EFC08F"/><circle cx="19.5" cy="13.4" r="1.6" fill="#97BC8F"/></svg></div>
+        <h3>第一次見面・免費諮詢</h3>
+        <div class="cat">FIRST TALK・初次限定</div>
+        <ul class="pains">
+          <li>30 分鐘線上聊聊，第一次不收費</li>
+          <li>先聽你說，把品牌的問題排出先後</li>
+          <li>聊完給你一個明確的下一步</li>
+        </ul>
+        <div class="price-line">免費 <small>初次見面・每人一次</small></div>
+        <button class="btn" id="csOpen" type="button">預約免費諮詢</button>
+        <p class="pay-note">填好預約單，川花會在 1–2 個工作天內與你聯繫</p>
+      </article>
       <article class="course c-blue">
         <div class="course-icon"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M5 24 L5 14 M12 24 L12 8 M19 24 L19 12 M26 24 L26 5" stroke="#5F93A8" stroke-width="3" stroke-linecap="round"/><circle cx="26" cy="5" r="3" fill="#D98EA3"/></svg></div>
-        <h3>品牌行銷付費諮詢</h3>
+        <h3>老朋友行銷諮詢</h3>
         <div class="cat">MARKETING CONSULTING・一對一</div>
         <ul class="pains">
-          <li>60–90 分鐘,一對一線上或實體 <span class="todo">時長待確認</span></li>
-          <li>先體質健檢,再對症下藥 <span class="todo">免費體質諮詢規劃中</span></li>
-          <li>結束後附行動建議,不說空話</li>
+          <li>1 小時，一對一線上或實體</li>
+          <li>聊過一次的老朋友，接著上次往下走</li>
+          <li>結束後附行動建議，不說空話</li>
         </ul>
-        <div style="font-family:var(--serif);font-size:26px;color:#6D3F50;margin-bottom:18px">NT$ <span class="todo" style="font-size:14px;vertical-align:6px">價格待確認</span></div>
-        <a class="btn" href="#" onclick="return false;">立即預約 <span style="font-size:11px">(金流串接中)</span></a>
-        <p class="pay-note">綠界金流審核通過後開放線上付款 <span class="todo">綠界待串接</span><br>現可透過官方 LINE 預約</p>
+        <div class="price-line">NT$ 3,600 <small>/ 1 小時</small></div>
+        <a class="btn" href="https://line.me/R/ti/p/@riverflower2025" target="_blank" rel="noopener">立即預約</a>
+        <p class="pay-note">現可透過官方 LINE 預約，專人確認時段</p>
       </article>
       <article class="course c-pink">
         <div class="course-icon"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 26 C15 20 15 16 15 12" stroke="#D98EA3" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="15" cy="8" rx="3.4" ry="5" fill="#D98EA3"/><ellipse cx="10.6" cy="10.4" rx="3.2" ry="4.4" fill="#EFBFCA" transform="rotate(-40 10.6 10.4)"/><ellipse cx="19.4" cy="10.4" rx="3.2" ry="4.4" fill="#EFBFCA" transform="rotate(40 19.4 10.4)"/><circle cx="15" cy="10.4" r="2" fill="#EFC08F"/><path d="M15 19 C11 17 9 14 9 11" stroke="#97BC8F" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>花藝教學課</h3>
+        <h3>開花教室・花藝課</h3>
         <div class="cat">FLORAL CLASS・小班制</div>
         <ul class="pains">
-          <li>小班手把手,當日新鮮花材 <span class="todo">時長待確認</span></li>
-          <li>從一朵花開始的美感練習</li>
-          <li>完成的作品,帶回家繼續開</li>
+          <li>一堂 1.5 小時，小班手把手</li>
+          <li>當日新鮮花材，從一朵花開始的美感練習</li>
+          <li>完成的作品，帶回家繼續開</li>
         </ul>
-        <div style="font-family:var(--serif);font-size:26px;color:#6D3F50;margin-bottom:18px">NT$ <span class="todo" style="font-size:14px;vertical-align:6px">價格待確認</span></div>
-        <a class="btn" href="#" onclick="return false;">立即報名 <span style="font-size:11px">(金流串接中)</span></a>
-        <p class="pay-note">綠界金流審核通過後開放線上付款 <span class="todo">綠界待串接</span><br>現可透過官方 LINE 報名</p>
+        <div class="price-line">NT$ 4,800 <small>/ 一堂 1.5 小時</small></div>
+        <a class="btn" href="https://line.me/R/ti/p/@riverflower2025" target="_blank" rel="noopener">立即報名</a>
+        <p class="pay-note">現可透過官方 LINE 報名，專人確認場次</p>
       </article>
     </div>
-    <p class="st-note">付款完成 → 成功頁 → 加入官方 LINE → 專人確認時段。<a href="#flow" id="stFlowLink" style="color:#B4690E">看完整流程</a></p>
+    <p class="st-note">免費諮詢：填好預約單，我們主動與你聯繫。付費項目：透過官方 LINE 預約，專人確認時段。</p>
+  </div>
+
+  <!-- 第一次免費諮詢・互動預約卡 -->
+  <div id="consult" role="dialog" aria-modal="true" aria-labelledby="csTitle" aria-hidden="true">
+    <div class="cs-wrap">
+      <div class="cs-card">
+        <button class="cs-close" type="button" data-csclose aria-label="關閉預約視窗">✕</button>
+
+        <div class="cs-page on" data-page="1">
+          <div class="cs-eyebrow">First Bloom・Step 1 / 3</div>
+          <h3 id="csTitle">現在的品牌，卡在哪裡？</h3>
+          <p class="cs-sub">勾起來的，就是第一次見面我們優先聊的。可複選，憑直覺就好。</p>
+          <div id="csPains">
+            <button class="cs-check" type="button" aria-pressed="false"><span class="bx">✓</span><span class="tx">品牌長什麼樣子，連自己都說不太清楚</span></button>
+            <button class="cs-check" type="button" aria-pressed="false"><span class="bx">✓</span><span class="tx">想轉型，但不知道第一步從哪裡開始</span></button>
+            <button class="cs-check" type="button" aria-pressed="false"><span class="bx">✓</span><span class="tx">東西是好的，營業額卻一直上不去</span></button>
+            <button class="cs-check" type="button" aria-pressed="false"><span class="bx">✓</span><span class="tx">廣告、社群、內容各做各的，力氣散掉了</span></button>
+            <button class="cs-check" type="button" aria-pressed="false"><span class="bx">✓</span><span class="tx">還沒開始做行銷，想知道第一步怎麼走</span></button>
+            <button class="cs-check" type="button" aria-pressed="false"><span class="bx">✓</span><span class="tx">想開一間店，或長出一個新品牌</span></button>
+          </div>
+        </div>
+
+        <div class="cs-page" data-page="2">
+          <div class="cs-eyebrow">First Bloom・Step 2 / 3</div>
+          <h3>這一次，你想往哪裡開？</h3>
+          <p class="cs-sub">沒有標準答案，把每一條拉到心裡的位置就好。</p>
+          <div class="cs-slider">
+            <div class="lab"><span>這次想要的改變</span><span class="val" style="color:var(--blue)" id="csV-change">50<small>%</small></span></div>
+            <input type="range" class="cs-range" min="0" max="100" value="50" data-k="change" style="--c:#57b6d9" aria-label="這次想要的改變程度">
+            <div class="cs-ends"><span>小幅調整就好</span><span>大膽轉型</span></div>
+          </div>
+          <div class="cs-slider">
+            <div class="lab"><span>現階段更在意</span><span class="val" style="color:var(--gold-deep)" id="csV-focus">50<small>%</small></span></div>
+            <input type="range" class="cs-range" min="0" max="100" value="50" data-k="focus" style="--c:#D99A63" aria-label="現階段在意營收或品牌的程度">
+            <div class="cs-ends"><span>先衝營收</span><span>先養品牌</span></div>
+          </div>
+          <div class="cs-slider">
+            <div class="lab"><span>期待的節奏</span><span class="val" style="color:var(--pink-deep)" id="csV-pace">50<small>%</small></span></div>
+            <input type="range" class="cs-range" min="0" max="100" value="50" data-k="pace" style="--c:#D98EA3" aria-label="期待的進行節奏">
+            <div class="cs-ends"><span>慢慢來，穩穩開</span><span>越快越好</span></div>
+          </div>
+        </div>
+
+        <div class="cs-page" data-page="3">
+          <div class="cs-eyebrow">First Bloom・Step 3 / 3</div>
+          <h3>好了，讓川花來找你</h3>
+          <p class="cs-sub">第一次聊聊不收費。我們會在 1–2 個工作天內與你聯繫。</p>
+          <div class="fm-field">
+            <label for="csName">怎麼稱呼你 *</label>
+            <input type="text" id="csName" maxlength="30" autocomplete="name" placeholder="例：陳小花">
+          </div>
+          <div class="fm-field fm-row">
+            <div>
+              <label for="csCtype">聯絡方式 *</label>
+              <select id="csCtype">
+                <option value="LINE">LINE</option>
+                <option value="電話">電話</option>
+                <option value="Email">Email</option>
+              </select>
+            </div>
+            <div>
+              <label for="csCval">ID / 號碼 / 信箱 *</label>
+              <input type="text" id="csCval" maxlength="60" placeholder="方便聯絡到你的">
+            </div>
+          </div>
+          <div class="fm-field">
+            <span class="cs-sub" id="csTimeLabel">方便的時段</span>
+            <div class="cs-chips" id="csChips" role="group" aria-labelledby="csTimeLabel">
+              <button class="cs-chip" type="button" aria-pressed="false">平日白天</button>
+              <button class="cs-chip" type="button" aria-pressed="false">平日晚上</button>
+              <button class="cs-chip" type="button" aria-pressed="false">週末</button>
+              <button class="cs-chip sel" type="button" aria-pressed="true">都可以，配合安排</button>
+            </div>
+          </div>
+          <div class="fm-field">
+            <label for="csNote">想先讓我們知道的事（選填）</label>
+            <textarea id="csNote" maxlength="400" placeholder="品牌名字、現在的狀況、或任何想說的"></textarea>
+          </div>
+          <p class="fm-msg" id="csMsg" aria-live="polite"></p>
+        </div>
+
+        <div class="cs-page" data-page="ok">
+          <div class="cs-ok">
+            <div class="okflower" aria-hidden="true">❀</div>
+            <h4>預約單已送出</h4>
+            <p>川花收到了，會在 1–2 個工作天內與你聯繫，<br>約好第一次聊天的時間。</p>
+            <p style="margin-top:10px">想更快約到？加入官方 LINE，跟我們說聲「我填好了」——</p>
+            <a class="btn-line-cs" href="https://line.me/R/ti/p/@riverflower2025" target="_blank" rel="noopener">加入官方 LINE&nbsp;&nbsp;@riverflower2025</a>
+          </div>
+        </div>
+
+        <div class="cs-nav" id="csNav">
+          <button class="cs-ghost hide" type="button" id="csPrev">← 上一步</button>
+          <div class="cs-dots" aria-hidden="true"><span class="cs-dot on"></span><span class="cs-dot"></span><span class="cs-dot"></span></div>
+          <button class="cs-btn" type="button" id="csNext">下一步 →</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -864,7 +1028,8 @@ function closeStudio(scrollTo_){
 }
 $$('[data-studio]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openStudio();$('#navLinks').classList.remove('open')}));
 $('#stBack').addEventListener('click',()=>closeStudio('#courses'));
-$('#stFlowLink').addEventListener('click',e=>{e.preventDefault();closeStudio('#flow')});
+const stFlowLink=$('#stFlowLink');
+if(stFlowLink) stFlowLink.addEventListener('click',e=>{e.preventDefault();closeStudio('#flow')});
 
 /* ═════════ 主頁互動 ═════════ */
 const nav=$('#nav');
@@ -1037,7 +1202,7 @@ if(!reduced){
   const WHITE='#F4ECEF', BLUE='#B9D2DD';
   const GROUPS=[
     {key:'gk', label:'副標「從河川長出花」', sizeMin:8,sizeMax:22, lsMax:14},
-    {key:'gt', label:'標語(每朵花,都是一條路...)', sizeMin:12,sizeMax:40, lsMax:10},
+    {key:'gt', label:'標語(每朵花，都是一條路...)', sizeMin:12,sizeMax:40, lsMax:10},
   ];
   const LS='chuanhua_v10_textstyle';
   const rootStyle=document.documentElement.style;
@@ -1126,6 +1291,160 @@ if(!reduced){
     if(e.ctrlKey&&e.shiftKey&&(e.key==='E'||e.key==='e')){ e.preventDefault(); buildPanel(); }
   });
 })();
+</script>
+
+<!-- 第一次免費諮詢・互動預約卡：Firebase + Google 試算表 -->
+<script type="module">
+const firebaseConfig = {
+  apiKey:            "AIzaSyDm38xIAhr21bdccmcatjZOwViQ5LRxWOc",
+  authDomain:        "website-card-338d4.firebaseapp.com",
+  projectId:         "website-card-338d4",
+  storageBucket:     "website-card-338d4.firebasestorage.app",
+  messagingSenderId: "177083574219",
+  appId:             "1:177083574219:web:3d598c21998e89fae5384e"
+};
+const SHEETS_SYNC_URL = "https://script.google.com/macros/s/AKfycbyOHQOcH9pe7ctE8JHkrWQxRQMLU-6NaH__ThIdLla25nFOR2v1vc6X9FPKwQ8uKZ8b/exec";
+
+const $id = s => document.getElementById(s);
+const consult = $id('consult');
+const pages = [...consult.querySelectorAll('.cs-page')];
+const openButton = $id('csOpen');
+let page = 1;
+let submitted = false;
+let lastFocus = null;
+const vibes = {change:50,focus:50,pace:50};
+
+function show(p){
+  page=p;
+  pages.forEach(s=>s.classList.toggle('on',s.dataset.page===String(p)));
+  const nav=$id('csNav');
+  if(p==='ok'){nav.style.display='none';return}
+  nav.style.display='flex';
+  $id('csPrev').classList.toggle('hide',p===1);
+  $id('csNext').textContent=p===3?'送出預約':'下一步 →';
+  [...consult.querySelectorAll('.cs-dot')].forEach((d,i)=>d.classList.toggle('on',i===p-1));
+}
+
+function setOpen(open){
+  consult.classList.toggle('open',open);
+  consult.setAttribute('aria-hidden',String(!open));
+  if(open){
+    lastFocus=document.activeElement;
+    setTimeout(()=>consult.querySelector('.cs-close').focus(),50);
+  }else if(lastFocus instanceof HTMLElement){
+    lastFocus.focus();
+  }
+}
+
+function paint(r){
+  const c=r.style.getPropertyValue('--c')||'#D98EA3';
+  r.style.background=`linear-gradient(90deg,${c} ${r.value}%,#EDE3E7 ${r.value}%)`;
+}
+
+function resetCard(){
+  consult.querySelectorAll('.cs-check').forEach(c=>{c.classList.remove('sel');c.setAttribute('aria-pressed','false')});
+  consult.querySelectorAll('.cs-range').forEach(r=>{r.value=50;paint(r)});
+  Object.keys(vibes).forEach(k=>{vibes[k]=50;$id('csV-'+k).innerHTML='50<small>%</small>'});
+  ['csName','csCval','csNote'].forEach(i=>$id(i).value='');
+  $id('csCtype').value='LINE';
+  consult.querySelectorAll('#csChips .cs-chip').forEach(c=>{
+    const selected=c.textContent==='都可以，配合安排';
+    c.classList.toggle('sel',selected);
+    c.setAttribute('aria-pressed',String(selected));
+  });
+  $id('csMsg').className='fm-msg';
+  show(1);
+}
+
+openButton.addEventListener('click',()=>{
+  if(submitted){resetCard();submitted=false}
+  setOpen(true);
+});
+consult.querySelectorAll('[data-csclose]').forEach(el=>el.addEventListener('click',()=>setOpen(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape'&&consult.classList.contains('open'))setOpen(false)});
+
+consult.querySelectorAll('#csPains .cs-check').forEach(c=>c.addEventListener('click',()=>{
+  const selected=!c.classList.contains('sel');
+  c.classList.toggle('sel',selected);
+  c.setAttribute('aria-pressed',String(selected));
+}));
+
+consult.querySelectorAll('.cs-range').forEach(r=>{
+  paint(r);
+  r.addEventListener('input',()=>{
+    vibes[r.dataset.k]=+r.value;
+    $id('csV-'+r.dataset.k).innerHTML=r.value+'<small>%</small>';
+    paint(r);
+  });
+});
+
+consult.querySelectorAll('#csChips .cs-chip').forEach(ch=>ch.addEventListener('click',()=>{
+  consult.querySelectorAll('#csChips .cs-chip').forEach(x=>{x.classList.remove('sel');x.setAttribute('aria-pressed','false')});
+  ch.classList.add('sel');
+  ch.setAttribute('aria-pressed','true');
+}));
+
+$id('csPrev').addEventListener('click',()=>{if(page>1)show(page-1)});
+$id('csNext').addEventListener('click',()=>{page<3?show(page+1):submit()});
+
+let firebasePromise=null;
+function ensureFirebase(){
+  if(!firebasePromise){
+    firebasePromise=Promise.all([
+      import('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js'),
+      import('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js')
+    ]).then(([appApi,storeApi])=>({
+      db:storeApi.getFirestore(appApi.initializeApp(firebaseConfig)),
+      addDoc:storeApi.addDoc,
+      collection:storeApi.collection,
+      serverTimestamp:storeApi.serverTimestamp
+    }));
+  }
+  return firebasePromise;
+}
+
+async function submit(){
+  const msg=$id('csMsg');
+  const name=$id('csName').value.trim();
+  const contactValue=$id('csCval').value.trim();
+  msg.className='fm-msg';
+  if(!name||!contactValue){
+    msg.textContent='「稱呼」和「聯絡方式」要填，我們才找得到你。';
+    msg.className='fm-msg err';
+    return;
+  }
+
+  const btn=$id('csNext');
+  btn.disabled=true;
+  btn.textContent='送出中…';
+  const pains=[...consult.querySelectorAll('#csPains .cs-check.sel .tx')].map(t=>t.textContent);
+  const contactType=$id('csCtype').value;
+  const chip=consult.querySelector('#csChips .cs-chip.sel');
+  const timeslot=chip?chip.textContent:'都可以，配合安排';
+  const note=$id('csNote').value.trim();
+
+  try{
+    const api=await ensureFirebase();
+    await api.addDoc(api.collection(api.db,'free_consultations'),{
+      name,contactType,contactValue,timeslot,note,pains,vibes:{...vibes},
+      status:'new',createdAt:api.serverTimestamp(),source:'studio-free-consult'
+    });
+    fetch(SHEETS_SYNC_URL,{method:'POST',mode:'no-cors',body:JSON.stringify({
+      name,contactType,contactValue,
+      topic:pains.length?pains.join('、'):'（未勾選）',
+      timeslot,
+      note:(note?note+'\n':'')+`[方向] 改變幅度 ${vibes.change}%｜營收↔品牌 ${vibes.focus}%｜節奏 ${vibes.pace}%`
+    })}).catch(()=>{});
+    submitted=true;
+    show('ok');
+  }catch(err){
+    msg.textContent='送出失敗，請稍後再試，或直接透過官方 LINE 聯繫川花。';
+    msg.className='fm-msg err';
+  }finally{
+    btn.disabled=false;
+    btn.textContent='送出預約';
+  }
+}
 </script>
 </body>
 </html>
