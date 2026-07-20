@@ -164,12 +164,12 @@ nav.scrolled{box-shadow:0 4px 24px rgba(47,78,99,.08)}
 .kw{background:#fff;border:1px solid var(--line);border-radius:99px;padding:8px 18px;font-size:13px;color:var(--river-deep);box-shadow:0 3px 12px rgba(47,78,99,.06);display:flex;align-items:center;gap:8px;transition:transform .3s,border-color .3s}
 .kw::before{content:"";width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--pink-deep),var(--gold))}
 .kw:hover{transform:translateY(-3px);border-color:var(--pink)}
-.about-art{display:flex;justify-content:center;position:relative}
+.about-art{--art-image-x:-15px;--art-image-y:-16px;--art-image-scale:1;--art-image-rotate:0deg;display:flex;justify-content:center;position:relative}
 .about-art::before{content:"";position:absolute;inset:-8% -6%;background:radial-gradient(ellipse 60% 55% at 50% 55%,rgba(214,232,241,.9),rgba(244,248,250,0) 75%);z-index:0}
-.about-art img{width:min(360px,86%);position:relative;z-index:1;
+.about-art-crop{width:min(360px,86%);aspect-ratio:1;position:relative;z-index:1;overflow:hidden;
   -webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 50%,#000 48%,transparent 76%);
-  mask-image:radial-gradient(ellipse 62% 58% at 50% 50%,#000 48%,transparent 76%);
-  filter:saturate(.88) contrast(.96)}
+  mask-image:radial-gradient(ellipse 62% 58% at 50% 50%,#000 48%,transparent 76%)}
+.about-art-crop img{width:100%;height:100%;object-fit:cover;transform:translate(var(--art-image-x),var(--art-image-y)) scale(var(--art-image-scale)) rotate(var(--art-image-rotate));transform-origin:center;filter:saturate(.88) contrast(.96)}
 
 /* services 我們做的事 ─ 六種花 */
 .services{background:linear-gradient(180deg,var(--services-t),var(--services-b));color:var(--ink);position:relative;overflow:hidden}
@@ -506,7 +506,7 @@ footer .back-garden:hover{color:var(--pink-deep)}
           </div>
         </div>
         <div class="about-art reveal d2">
-          <img src="assets/flower-shop.png" alt="川花的花店一隅">
+          <div class="about-art-crop"><img src="assets/flower-shop.png" alt="川花的花店一隅"></div>
         </div>
       </div>
     </div>
