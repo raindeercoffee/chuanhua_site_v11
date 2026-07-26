@@ -591,22 +591,6 @@ footer .back-garden:hover{color:var(--pink-deep)}
     </div>
   </section>
 
-  <!-- 流程(保留) -->
-  <section class="flow esec on-dark" id="flow" data-label="開花的流程">
-    <div class="wrap">
-      <div class="eyebrow reveal">HOW IT WORKS</div>
-      <h2 class="reveal">從付款到開花，只要四步</h2>
-      <p class="lead reveal d1">線上完成付款後，由川花官方 LINE 與你聯繫</p>
-      <div class="steps reveal" id="steps">
-        <div class="step-line"></div>
-        <div class="step"><div class="step-dot">1</div><h4>選擇課程並付款</h4><p>選定諮詢或花藝課，並完成線上付款</p></div>
-        <div class="step"><div class="step-dot">2</div><h4>看見付款成功頁</h4><p>付款完成後，頁面會確認你的訂單與金額</p></div>
-        <div class="step"><div class="step-dot">3</div><h4>加入官方 LINE</h4><p>成功頁上有官方 LINE 連結，加入後回報姓名</p></div>
-        <div class="step"><div class="step-dot">4</div><h4>專人確認時段</h4><p>由專人與你確認時間，完成預約</p></div>
-      </div>
-    </div>
-  </section>
-
   <!-- 退款(保留) -->
   <section class="policy esec" id="policy" data-label="退款規則">
     <div class="wrap">
@@ -762,6 +746,21 @@ footer .back-garden:hover{color:var(--pink-deep)}
     <p class="st-note">免費諮詢：填好預約單，我們主動與你聯繫。付費項目：透過官方 LINE 預約，專人確認時段。</p>
   </div>
 
+  <section class="flow esec on-dark" id="flow" data-label="開花的流程">
+    <div class="wrap">
+      <div class="eyebrow reveal">HOW IT WORKS</div>
+      <h2 class="reveal">從付款到開花，只要四步</h2>
+      <p class="lead reveal d1">線上完成付款後，由川花官方 LINE 與你聯繫</p>
+      <div class="steps reveal" id="steps">
+        <div class="step-line"></div>
+        <div class="step"><div class="step-dot">1</div><h4>選擇課程並付款</h4><p>選定諮詢或花藝課，並完成線上付款</p></div>
+        <div class="step"><div class="step-dot">2</div><h4>看見付款成功頁</h4><p>付款完成後，頁面會確認你的訂單與金額</p></div>
+        <div class="step"><div class="step-dot">3</div><h4>加入官方 LINE</h4><p>成功頁上有官方 LINE 連結，加入後回報姓名</p></div>
+        <div class="step"><div class="step-dot">4</div><h4>專人確認時段</h4><p>由專人與你確認時間，完成預約</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- 第一次免費諮詢・互動預約卡 -->
   <div id="consult" role="dialog" aria-modal="true" aria-labelledby="csTitle" aria-hidden="true">
     <div class="cs-wrap">
@@ -886,7 +885,7 @@ if(matchMedia('(hover:hover)').matches && !reduced){
 const FLOWERS=[
   {label:"關於我們",  en:"WHO WE ARE",  target:"#about",  img:"flower_1_farLeft.png",  petal:"#EFBFCA", h:118, s:1.0},
   {label:"我們開過的花",en:"CASES",      target:"#cases",  img:"flower_2_left.png",     petal:"#F5D4DC", h:138, s:1.1},
-  {label:"開花的流程",en:"HOW IT WORKS",target:"#flow",   img:"flower_4_right.png",    petal:"#EFBFCA", h:132, s:1.06},
+  {label:"開花的流程",en:"HOW IT WORKS",target:"studio-flow",img:"flower_4_right.png",    petal:"#EFBFCA", h:132, s:1.06},
   {label:"找川花說話",en:"CONTACT",     target:"#contact",img:"flower_5_farRight.png", petal:"#F5D4DC", h:112, s:.94},
 ];
 const field=$('#g-field');
@@ -953,7 +952,7 @@ field.addEventListener('click',e=>{
   const f=FLOWERS[[...field.children].indexOf(btn)];
   scatterPetals(head.left+head.width/2, head.top+head.height*.28, f.petal);
   setTimeout(()=>{
-    if(btn.dataset.target==='studio'){ enterMain(null); openStudio(); }
+    if(btn.dataset.target==='studio' || btn.dataset.target==='studio-flow'){ enterMain(null); openStudio(btn.dataset.target==='studio-flow'?'#flow':null); }
     else enterMain(btn.dataset.target);
   }, reduced?0:650);
 });
@@ -997,11 +996,12 @@ function bloomTransition(cb){
   setTimeout(cb, 1150);
   setTimeout(()=>{fx.classList.remove('on');fxBusy=false}, 1900);
 }
-function openStudio(){
+function openStudio(scrollTarget){
   bloomTransition(()=>{
     $('#studio').classList.add('open');
     document.body.classList.add('studio-open');
     $('#studio').scrollTop=0;
+    if(scrollTarget) setTimeout(()=>{const el=$(scrollTarget); if(el) el.scrollIntoView({behavior:'auto',block:'start'})},40);
     document.body.classList.add('lock');
     /* 教室花瓣 */
     const st=$('#studio');
