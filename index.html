@@ -472,7 +472,7 @@ footer .back-garden:hover{color:var(--pink-deep)}
 <!-- ═════════ L2 · 主頁 ═════════ -->
 <nav id="nav">
   <div class="nav-in">
-    <a class="nav-logo" href="#shore"><img src="assets/logo-h-color.png" alt="川花 RIVER FLOWER"></a>
+    <a class="nav-logo" href="#" id="navLogo"><img src="assets/logo-h-color.png" alt="川花 RIVER FLOWER"></a>
     <button class="burger" id="burger" aria-label="選單"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">關於我們</a></li>
@@ -1027,6 +1027,7 @@ function closeStudio(scrollTo_){
 $$('[data-studio]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openStudio();$('#navLinks').classList.remove('open')}));
 $('#stBack').addEventListener('click',()=>closeStudio('#courses'));
 $('#navGarden').addEventListener('click',e=>{e.preventDefault();if($('#studio').classList.contains('open')) closeStudio();$('#reGarden').click()});
+$('#navLogo').addEventListener('click',e=>{e.preventDefault();if($('#studio').classList.contains('open')) closeStudio();$('#reGarden').click()});
 const stFlowLink=$('#stFlowLink');
 if(stFlowLink) stFlowLink.addEventListener('click',e=>{e.preventDefault();closeStudio('#flow')});
 
