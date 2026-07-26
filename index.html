@@ -118,6 +118,11 @@ nav.scrolled{box-shadow:0 4px 24px rgba(47,78,99,.08)}
 .nav-links a:hover{color:var(--blue)}
 .nav-cta{background:var(--river-deep);color:#fff!important;padding:8px 18px;border-radius:99px;transition:background .25s}
 .nav-cta:hover{background:var(--pink-deep)}
+.page-arrows{position:fixed;right:24px;top:50%;z-index:480;display:flex;flex-direction:column;gap:8px;transform:translateY(-50%);opacity:0;pointer-events:none;transition:opacity .35s}
+body.site-open .page-arrows{opacity:.96;pointer-events:auto}
+body.studio-open .page-arrows{opacity:0;pointer-events:none}
+.page-arrows button{width:48px;height:48px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:var(--river-deep);font-size:18px;line-height:1;cursor:pointer;box-shadow:0 5px 18px rgba(47,78,99,.16);transition:transform .25s,background .25s,color .25s}
+.page-arrows button:hover{transform:translateY(-2px);background:var(--river-deep);color:#fff}
 .burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
 .burger span{display:block;width:22px;height:2px;background:var(--river-deep);margin:5px 0}
 
@@ -474,11 +479,15 @@ footer .back-garden:hover{color:var(--pink-deep)}
       <li><a href="#services">我們做的事</a></li>
       <li><a href="#cases">我們開過的花</a></li>
       <li><a href="#" data-studio>開花教室</a></li>
-      <li><a href="#flow">開花的流程</a></li>
-      <li><a href="#contact" class="nav-cta">找川花說話</a></li>
+      <li><a href="#" id="navGarden">找川花說話</a></li>
     </ul>
   </div>
 </nav>
+
+<div class="page-arrows" aria-label="頁面導覽">
+  <button type="button" id="pageUp" aria-label="向上">▲</button>
+  <button type="button" id="pageDown" aria-label="向下">▼</button>
+</div>
 
 <div id="main">
 
@@ -569,14 +578,14 @@ footer .back-garden:hover{color:var(--pink-deep)}
         </article>
         <article class="course c-pink reveal d2">
           <div class="course-icon"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 26 C15 20 15 16 15 12" stroke="#D98EA3" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="15" cy="8" rx="3.4" ry="5" fill="#D98EA3"/><ellipse cx="10.6" cy="10.4" rx="3.2" ry="4.4" fill="#EFBFCA" transform="rotate(-40 10.6 10.4)"/><ellipse cx="19.4" cy="10.4" rx="3.2" ry="4.4" fill="#EFBFCA" transform="rotate(40 19.4 10.4)"/><circle cx="15" cy="10.4" r="2" fill="#EFC08F"/><path d="M15 19 C11 17 9 14 9 11" stroke="#97BC8F" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <h3>花藝教學課</h3>
-          <div class="cat">FLORAL CLASS・小班制</div>
+          <h3>收聽開花的聲音</h3>
+          <div class="cat">PODCAST・行銷知識</div>
           <ul class="pains">
             <li>想學花藝，卻不知道該如何開始</li>
             <li>送給自己一段安靜、療癒的時間</li>
             <li>想把美感帶回家，帶到生活與工作</li>
           </ul>
-          <button class="btn" data-studio>走進開花教室</button>
+          <button class="btn" type="button">聆聽川花</button>
         </article>
       </div>
     </div>
@@ -919,6 +928,7 @@ function enterMain(scrollTarget){
   if(entered) return; entered=true;
   $('#garden').classList.add('out');
   document.body.classList.remove('lock');
+  document.body.classList.add('site-open');
   /* 蓋掉瀏覽器解鎖後才套用的延遲捲動還原 */
   scrollTo(0,0);
   requestAnimationFrame(()=>scrollTo(0,0));
@@ -955,6 +965,7 @@ $('#reGarden').addEventListener('click',e=>{
   entered=false;
   const g=$('#garden'); g.classList.remove('out');
   document.body.classList.add('lock');
+  document.body.classList.remove('site-open');
   $('#nav').classList.remove('show');
   scrollTo({top:0,behavior:'auto'});
   /* 花重新開 */
@@ -989,6 +1000,7 @@ function bloomTransition(cb){
 function openStudio(){
   bloomTransition(()=>{
     $('#studio').classList.add('open');
+    document.body.classList.add('studio-open');
     $('#studio').scrollTop=0;
     document.body.classList.add('lock');
     /* 教室花瓣 */
@@ -1008,11 +1020,13 @@ function openStudio(){
 }
 function closeStudio(scrollTo_){
   $('#studio').classList.remove('open');
+  document.body.classList.remove('studio-open');
   document.body.classList.remove('lock');
   if(scrollTo_){const el=$(scrollTo_); if(el) el.scrollIntoView({behavior: reduced?'auto':'smooth'})}
 }
 $$('[data-studio]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openStudio();$('#navLinks').classList.remove('open')}));
 $('#stBack').addEventListener('click',()=>closeStudio('#courses'));
+$('#navGarden').addEventListener('click',e=>{e.preventDefault();if($('#studio').classList.contains('open')) closeStudio();$('#reGarden').click()});
 const stFlowLink=$('#stFlowLink');
 if(stFlowLink) stFlowLink.addEventListener('click',e=>{e.preventDefault();closeStudio('#flow')});
 
@@ -1021,6 +1035,8 @@ const nav=$('#nav');
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10),{passive:true});
 $('#burger').addEventListener('click',()=>$('#navLinks').classList.toggle('open'));
 $$('#navLinks a').forEach(a=>a.addEventListener('click',()=>$('#navLinks').classList.remove('open')));
+$('#pageUp').addEventListener('click',()=>scrollBy({top:-Math.max(360,innerHeight*.86),behavior:reduced?'auto':'smooth'}));
+$('#pageDown').addEventListener('click',()=>scrollBy({top:Math.max(360,innerHeight*.86),behavior:reduced?'auto':'smooth'}));
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.16});
 $$('.reveal,#steps').forEach(el=>io.observe(el));
